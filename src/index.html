@@ -84,22 +84,24 @@
                 <h2>Blog</h2>
                 <!-- Search Bar -->
                 <div class="mb-4">
-                    <input type="text" class="form-control" placeholder="Search blog posts...">
+                    <input type="text" class="form-control" placeholder="Search blog posts..." v-model="searchQuery">
                 </div>
                 <div class="row">
-                    <!-- Blog Post 1 -->
-                    <div class="col-md-4 mb-4">
+                    <!-- Blog Posts -->
+                    <div class="col-md-4 mb-4" v-for="post in filteredBlogPosts" :key="post.id">
                         <div class="card">
-                            <img src="images/blog1.jpg" class="card-img-top" alt="Blog Post 1">
+                            <img :src="post.image" class="card-img-top" :alt="post.title">
                             <div class="card-body">
-                                <h5 class="card-title">Blog Post Title 1</h5>
-                                <p class="card-text">An excerpt from the blog post...</p>
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                <p class="card-text">{{ post.excerpt }}</p>
                                 <a href="#" class="btn btn-primary">Read More</a>
                             </div>
                         </div>
                     </div>
-                    <!-- Blog Post 2 -->
-                    <!-- Repeat similar blocks for more blog posts -->
+                    <!-- No Results Message -->
+                    <div class="col-12" v-if="filteredBlogPosts.length === 0">
+                        <p>No blog posts found matching your search.</p>
+                    </div>
                 </div>
             </div>
         </section>
