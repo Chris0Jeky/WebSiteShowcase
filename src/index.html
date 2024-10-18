@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Name | Portfolio & Blog</title>
+    <meta name="description" content="A personal portfolio and blog showcasing projects and writings.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Open+Sans&display=swap" rel="stylesheet">
+    <!-- Include Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">Your Logo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex align-items-center" style="background-image: url('images/hero.jpg');">
+        <div class="container text-center">
+            <h1>Your Tagline Here</h1>
+            <p>A brief introduction or inspiring quote.</p>
+            <a href="#portfolio" class="btn btn-primary mt-3">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Brief bio highlighting your skills, interests, and professional journey.</p>
+            <!-- Optional Resume Download -->
+            <!-- <a href="path/to/your_resume.pdf" class="btn btn-secondary mt-3">Download Resume</a> -->
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5 bg-light">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="row">
+                <!-- Portfolio Item 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/project1.jpg" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Project Title 1</h5>
+                            <p class="card-text">Short description of the project.</p>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#projectModal1">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Item 2 -->
+                <!-- Repeat similar blocks for more portfolio items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Highlights Section -->
+    <section id="blog" class="py-5">
+        <div class="container">
+            <h2>Blog</h2>
+            <!-- Search Bar -->
+            <div class="mb-4">
+                <input type="text" class="form-control" placeholder="Search blog posts...">
+            </div>
+            <div class="row">
+                <!-- Blog Post 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/blog1.jpg" class="card-img-top" alt="Blog Post 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Blog Post Title 1</h5>
+                            <p class="card-text">An excerpt from the blog post...</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 2 -->
+                <!-- Repeat similar blocks for more blog posts -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <!-- Contact Form -->
+            <form id="contact-form" class="mt-4">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputName">Name</label>
+                        <input type="text" class="form-control" id="inputName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputSubject">Subject</label>
+                    <input type="text" class="form-control" id="inputSubject" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputMessage">Message</label>
+                    <textarea id="inputMessage" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+
+            <!-- FAQs -->
+            <div class="mt-5">
+                <h3>FAQs</h3>
+                <div id="faqAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="card">
+                        <div class="card-header" id="faqHeading1">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                                    Question 1
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="faq1" class="collapse" aria-labelledby="faqHeading1" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                Answer to question 1.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <!-- Repeat similar blocks for more FAQs -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container text-center">
+            <p>&copy; <span id="currentYear"></span> Your Name. All rights reserved.</p>
+            <div class="social-icons">
+                <!-- Social Media Icons -->
+                <a href="#" class="text-dark mr-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="#" class="text-dark mr-3"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" class="text-dark"><i class="fab fa-twitter fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals for Portfolio Projects -->
+    <!-- Project Modal 1 -->
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="projectModalLabel1">Project Title 1</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Project details and additional images -->
+            <p>Detailed description of the project, technologies used, and your role.</p>
+            <img src="images/project1-detail.jpg" class="img-fluid" alt="Project Detail">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Repeat similar modals for other projects -->
+
+    <!-- Include jQuery, Bootstrap JS, and Vue.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Include Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
