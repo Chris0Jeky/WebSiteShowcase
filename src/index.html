@@ -111,53 +111,62 @@
             <div class="container">
                 <h2>Contact Me</h2>
                 <!-- Contact Form -->
-                <form id="contact-form" class="mt-4">
+                <form id="contact-form" class="mt-4" @submit.prevent="validateForm">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputName">Name</label>
-                            <input type="text" class="form-control" id="inputName" placeholder="Your Name" required>
+                            <input type="text" class="form-control" id="inputName" placeholder="Your Name"
+                                v-model="contactForm.name">
+                            <small class="text-danger" v-if="formErrors.name">{{ formErrors.name }}</small>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail">Email</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Your Email" required>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Your Email"
+                                v-model="contactForm.email">
+                            <small class="text-danger" v-if="formErrors.email">{{ formErrors.email }}</small>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputSubject">Subject</label>
-                        <input type="text" class="form-control" id="inputSubject" placeholder="Subject" required>
+                        <input type="text" class="form-control" id="inputSubject" placeholder="Subject"
+                            v-model="contactForm.subject">
+                        <small class="text-danger" v-if="formErrors.subject">{{ formErrors.subject }}</small>
                     </div>
                     <div class="form-group">
                         <label for="inputMessage">Message</label>
                         <textarea id="inputMessage" class="form-control" rows="5" placeholder="Your Message"
-                            required></textarea>
+                            v-model="contactForm.message"></textarea>
+                        <small class="text-danger" v-if="formErrors.message">{{ formErrors.message }}</small>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
+
 
                 <!-- FAQs -->
                 <div class="mt-5">
                     <h3>FAQs</h3>
                     <div id="faqAccordion">
-                        <!-- FAQ Item 1 -->
-                        <div class="card">
-                            <div class="card-header" id="faqHeading1">
+                        <!-- FAQ Items -->
+                        <div class="card" v-for="(faq, index) in faqs" :key="index">
+                            <div class="card-header" :id="'faqHeading' + index">
                                 <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faq1"
-                                        aria-expanded="false" aria-controls="faq1">
-                                        Question 1
+                                    <button class="btn btn-link" @click="toggleFAQ(faq)">
+                                        {{ faq.question }}
+                                        <i :class="{'fas fa-chevron-down': !faq.isOpen, 'fas fa-chevron-up': faq.isOpen}"
+                                            class="float-right"></i>
                                     </button>
                                 </h5>
                             </div>
-                            <div id="faq1" class="collapse" aria-labelledby="faqHeading1" data-parent="#faqAccordion">
+                            <div :id="'faq' + index" class="collapse" :class="{ show: faq.isOpen }"
+                                :aria-labelledby="'faqHeading' + index">
                                 <div class="card-body">
-                                    Answer to question 1.
+                                    {{ faq.answer }}
                                 </div>
                             </div>
                         </div>
-                        <!-- FAQ Item 2 -->
-                        <!-- Repeat similar blocks for more FAQs -->
                     </div>
                 </div>
+
             </div>
         </section>
 
